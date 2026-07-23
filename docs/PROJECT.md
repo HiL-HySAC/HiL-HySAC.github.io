@@ -55,7 +55,6 @@ prior work.
 ## Links
 
 - Live site: <https://hil-hysac.github.io/>
-- Videos and additional details: <https://ctderl.github.io/CTDE.github.io/>
 - Website source: <https://github.com/HiL-HySAC/HiL-HySAC.github.io>
 
 ## Publication items still required
