@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="HiL-HySAC — a research project on hardware-in-the-loop learning and evaluation."
+    />
+    <meta name="theme-color" content="#f4f0e8" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HiL-HySAC" />
+    <meta
+      property="og:description"
+      content="A research project on hardware-in-the-loop learning and evaluation."
+    />
+    <meta
+      property="og:url"
+      content="https://evanzhangyifang.github.io/HiL-HySac.github.io/"
+    />
+
+    <title>HiL-HySAC — Project Page</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="#" aria-label="HiL-HySAC home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        HiL–HySAC
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Research project · Project page</p>
+          <h1>Learning in simulation.<br /><em>Proving it in the loop.</em></h1>
+          <p class="lede">
+            HiL-HySAC is a research project exploring hybrid learning and
+            hardware-in-the-loop evaluation for reliable control.
+          </p>
+
+          <div class="actions" aria-label="Project links">
+            <a
+              class="button button-primary"
+              href="https://github.com/EvanZhangYifang/HiL-HySac.github.io"
+            >
+              View repository
+              <span aria-hidden="true">↗</span>
+            </a>
+            <span class="button button-muted" title="Add the paper URL when available">
+              Paper coming soon
+            </span>
+          </div>
+
+          <!-- TODO: Replace with the final author list and affiliations. -->
+          <p class="authors">
+            <span>Author names</span>
+            <i aria-hidden="true"></i>
+            <span>Institution or research group</span>
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-label="A stylized hardware-in-the-loop cycle">
+          <div class="orbit orbit-outer"></div>
+          <div class="orbit orbit-inner"></div>
+          <div class="node node-agent">
+            <span>01</span>
+            <strong>Agent</strong>
+          </div>
+          <div class="node node-sim">
+            <span>02</span>
+            <strong>Simulation</strong>
+          </div>
+          <div class="node node-hardware">
+            <span>03</span>
+            <strong>Hardware</strong>
+          </div>
+          <div class="visual-center">
+            <span>closed</span>
+            <strong>LOOP</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Project highlights">
+        <!-- TODO: Replace these qualitative labels with headline results. -->
+        <div><strong>Hybrid</strong><span>training pipeline</span></div>
+        <div><strong>HiL</strong><span>validation setup</span></div>
+        <div><strong>Open</strong><span>reproducible research</span></div>
+      </section>
+
+      <section class="section overview" id="overview">
+        <div class="section-label">
+          <span>01</span>
+          <p>Overview</p>
+        </div>
+        <div class="section-content">
+          <p class="display-copy">
+            Bridging the gap between a policy that works
+            <em>in theory</em> and a controller that works
+            <em>on hardware.</em>
+          </p>
+          <!-- TODO: Replace this paragraph with the paper abstract. -->
+          <p class="body-copy">
+            This page is ready for the project’s final abstract. Explain the
+            problem, why existing approaches fall short, the central idea
+            behind HiL-HySAC, and the strongest measured outcome in four or
+            five sentences.
+          </p>
+        </div>
+      </section>
+
+      <section class="section method" id="method">
+        <div class="section-label">
+          <span>02</span>
+          <p>Method</p>
+        </div>
+        <div class="section-content">
+          <div class="section-heading">
+            <h2>A closed-loop workflow</h2>
+            <p>
+              Present the method as three memorable stages. Replace the copy
+              below with the terminology used in the paper.
+            </p>
+          </div>
+
+          <div class="method-grid">
+            <article>
+              <span class="card-number">01</span>
+              <div class="card-icon" aria-hidden="true">⌁</div>
+              <h3>Learn</h3>
+              <p>
+                Describe the simulated environment, observations, actions,
+                objective, and the learning algorithm.
+              </p>
+            </article>
+            <article>
+              <span class="card-number">02</span>
+              <div class="card-icon" aria-hidden="true">⇄</div>
+              <h3>Connect</h3>
+              <p>
+                Explain how the controller, simulator, and physical components
+                exchange data in real time.
+              </p>
+            </article>
+            <article>
+              <span class="card-number">03</span>
+              <div class="card-icon" aria-hidden="true">◎</div>
+              <h3>Validate</h3>
+              <p>
+                Summarize the hardware platform, evaluation protocol, and
+                success criteria.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section results" id="results">
+        <div class="section-label">
+          <span>03</span>
+          <p>Results</p>
+        </div>
+        <div class="section-content">
+          <div class="section-heading">
+            <h2>Evidence, at a glance</h2>
+            <p>
+              Add one clear plot or demo here, followed by the three numbers a
+              reader should remember.
+            </p>
+          </div>
+
+          <div class="result-placeholder">
+            <div class="placeholder-chart" aria-hidden="true">
+              <i style="--height: 34%"></i>
+              <i style="--height: 48%"></i>
+              <i style="--height: 42%"></i>
+              <i style="--height: 68%"></i>
+              <i style="--height: 61%"></i>
+              <i style="--height: 84%"></i>
+            </div>
+            <div>
+              <p class="eyebrow">Results placeholder</p>
+              <h3>Put the strongest comparison first.</h3>
+              <p>
+                Export plots as SVG or WebP, place them in
+                <code>assets/</code>, and replace this block with a figure and
+                a concise caption.
+              </p>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div><strong>—</strong><span>Primary metric</span></div>
+            <div><strong>—</strong><span>Improvement over baseline</span></div>
+            <div><strong>—</strong><span>Hardware trials</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section resources" id="resources">
+        <div class="section-label">
+          <span>04</span>
+          <p>Resources</p>
+        </div>
+        <div class="section-content">
+          <div class="section-heading">
+            <h2>Explore the project</h2>
+            <p>Activate each resource as it becomes publicly available.</p>
+          </div>
+
+          <div class="resource-list">
+            <a href="https://github.com/EvanZhangYifang/HiL-HySac.github.io">
+              <span>Repository</span>
+              <small>Website source</small>
+              <b aria-hidden="true">↗</b>
+            </a>
+            <div aria-disabled="true">
+              <span>Paper</span>
+              <small>Coming soon</small>
+              <b aria-hidden="true">—</b>
+            </div>
+            <div aria-disabled="true">
+              <span>Code &amp; models</span>
+              <small>Coming soon</small>
+              <b aria-hidden="true">—</b>
+            </div>
+            <div aria-disabled="true">
+              <span>Dataset</span>
+              <small>Coming soon</small>
+              <b aria-hidden="true">—</b>
+            </div>
+          </div>
+
+          <div class="citation">
+            <div>
+              <p class="eyebrow">Citation</p>
+              <h3>BibTeX will be added on publication.</h3>
+            </div>
+            <button type="button" data-copy-citation disabled>
+              Copy BibTeX
+            </button>
+            <!--
+              TODO: Paste the final BibTeX inside this element, remove the
+              hidden attribute, and remove `disabled` from the button.
+            -->
+            <pre id="bibtex" hidden><code>@article{your-citation-key,
+  title   = {HiL-HySAC},
+  author  = {Author names},
+  year    = {2026}
+}</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>HiL–HySAC <span aria-hidden="true">·</span> Research project</p>
+      <p>Last updated <time data-current-year>2026</time></p>
+    </footer>
+  </body>
+</html>
