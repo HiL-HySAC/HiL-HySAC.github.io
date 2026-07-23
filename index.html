@@ -7,7 +7,7 @@
       name="description"
       content="Real-world reinforcement learning with hybrid action spaces, decentralized actor-agents, and a centralized multi-head critic for robot manipulation."
     />
-    <meta name="theme-color" content="#f4f0e8" />
+    <meta name="theme-color" content="#ffffff" />
 
     <meta property="og:type" content="website" />
     <meta
@@ -20,7 +20,7 @@
     />
     <meta
       property="og:url"
-      content="https://evanzhangyifang.github.io/HiL-HySac.github.io/"
+      content="https://hil-hysac.github.io/"
     />
 
     <title>Real-World RL with Hybrid Action Spaces — HiL-HySAC</title>
@@ -35,7 +35,7 @@
     <header class="site-header">
       <a class="wordmark" href="#" aria-label="HiL-HySAC home">
         <span class="wordmark-mark" aria-hidden="true"></span>
-        HiL–HySAC
+        HiL–HySAC <small>Project Page</small>
       </a>
       <nav aria-label="Primary navigation">
         <a href="#overview">Overview</a>
@@ -48,41 +48,45 @@
     <main id="main">
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Real-world reinforcement learning · Robot manipulation</p>
-          <h1>Hybrid actions.<br /><em>One joint critic.</em></h1>
+          <p class="eyebrow">Real-world reinforcement learning for robot manipulation</p>
+          <h1>
+            Real-World RL with Hybrid Action Spaces and Multi-Head Critic
+            <span>
+              via Centralized Training with Decentralized Execution for Robot
+              Manipulation
+            </span>
+          </h1>
           <p class="lede">
-            Centralized training with decentralized execution for robust robot
-            manipulation across continuous arm motion and discrete gripper
-            control.
+            A multi-agent framework for learning continuous arm motion and
+            discrete gripper control directly on physical robots.
           </p>
+
+          <div class="authors">
+            <div class="author-list">
+              <a href="https://orcid.org/0009-0006-1754-0283">Changhao Li<sup>1,2</sup></a>
+              <a href="https://orcid.org/0000-0002-7639-4232">Yifang Zhang<sup>1,2</sup></a>
+              <a href="https://orcid.org/0000-0003-4832-9668">Heng Zhang<sup>3,4</sup></a>
+              <a href="https://orcid.org/0000-0002-1261-737X">Arash Ajoudani<sup>3</sup></a>
+              <a href="https://orcid.org/0000-0002-9877-8237">Nikos Tsagarakis<sup>2</sup></a>
+            </div>
+            <div class="affiliations">
+              <p><sup>1</sup> HHCM, Istituto Italiano di Tecnologia</p>
+              <p><sup>2</sup> DIBRIS, University of Genoa</p>
+              <p><sup>3</sup> Human-Robot Interfaces and Interaction Lab, IIT</p>
+              <p><sup>4</sup> DRIM, University of Genoa</p>
+            </div>
+          </div>
 
           <div class="actions" aria-label="Project links">
             <a class="button button-primary" href="https://ctderl.github.io/CTDE.github.io/">
-              Watch videos
-              <span aria-hidden="true">↗</span>
+              Project videos
             </a>
             <a
               class="button"
               href="https://github.com/HiL-HySAC/HiL-HySAC.github.io"
             >
-              View repository
-              <span aria-hidden="true">↗</span>
+              Website source
             </a>
-          </div>
-
-          <div class="authors">
-            <div class="author-list">
-              <a href="https://orcid.org/0009-0006-1754-0283">Changhao Li</a>
-              <a href="https://orcid.org/0000-0002-7639-4232">Yifang Zhang</a>
-              <a href="https://orcid.org/0000-0003-4832-9668">Heng Zhang</a>
-              <a href="https://orcid.org/0000-0002-1261-737X">Arash Ajoudani</a>
-              <a href="https://orcid.org/0000-0002-9877-8237">Nikos Tsagarakis</a>
-            </div>
-            <p>
-              Istituto Italiano di Tecnologia
-              <i aria-hidden="true"></i>
-              University of Genoa
-            </p>
           </div>
         </div>
 
@@ -90,25 +94,48 @@
           class="hero-visual"
           aria-label="Two decentralized actor-agents connected to a centralized joint critic"
         >
-          <div class="orbit orbit-outer"></div>
-          <div class="orbit orbit-inner"></div>
-          <div class="node node-agent">
-            <span>01</span>
-            <strong>Arm agent</strong>
+          <div class="diagram-column">
+            <p>Decentralized execution</p>
+            <div class="node">
+              <span>Actor 1 · Continuous</span>
+              <strong>Cartesian arm policy</strong>
+            </div>
+            <div class="node">
+              <span>Actor 2 · Discrete</span>
+              <strong>Gripper policy</strong>
+            </div>
           </div>
-          <div class="node node-sim">
-            <span>02</span>
-            <strong>Joint critic</strong>
+          <div class="diagram-arrow" aria-hidden="true">
+            <span>joint observations</span>
+            <b>→</b>
           </div>
-          <div class="node node-hardware">
-            <span>03</span>
-            <strong>Gripper agent</strong>
+          <div class="diagram-column">
+            <p>Centralized training</p>
+            <div class="node node-primary">
+              <span>Omniscient value model</span>
+              <strong>Multi-head joint critic</strong>
+            </div>
           </div>
-          <div class="visual-center">
-            <span>training</span>
-            <strong>CTDE</strong>
+          <div class="diagram-arrow" aria-hidden="true">
+            <span>reward decomposition</span>
+            <b>→</b>
+          </div>
+          <div class="diagram-column">
+            <p>Hybrid reward architecture</p>
+            <div class="node">
+              <span>Task objectives</span>
+              <strong>Multiple value heads</strong>
+            </div>
+            <div class="node">
+              <span>Policy shaping</span>
+              <strong>Grasp-head Q-value</strong>
+            </div>
           </div>
         </div>
+        <p class="figure-caption">
+          Method overview. Two specialized actor-agents execute independently,
+          while a centralized multi-head critic coordinates training.
+        </p>
       </section>
 
       <section class="stats" aria-label="Project highlights">
@@ -120,13 +147,10 @@
       <section class="section overview" id="overview">
         <div class="section-label">
           <span>01</span>
-          <p>Overview</p>
+          <p>Abstract</p>
         </div>
         <div class="section-content">
-          <p class="display-copy">
-            Scaling online RL from constrained demonstrations to
-            <em>large, variable workspaces.</em>
-          </p>
+          <h2 class="display-copy">Abstract</h2>
           <p class="body-copy">
             Real-world online reinforcement learning bypasses the sim-to-real
             gap, but existing human-in-the-loop methods often explore small
@@ -150,7 +174,7 @@
         </div>
         <div class="section-content">
           <div class="section-heading">
-            <h2>A closed-loop workflow</h2>
+            <h2>Method</h2>
             <p>
               Hybrid control is separated at execution and coordinated during
               training through shared value estimation.
@@ -160,7 +184,6 @@
           <div class="method-grid">
             <article>
               <span class="card-number">01</span>
-              <div class="card-icon" aria-hidden="true">⌁</div>
               <h3>Decentralized actors</h3>
               <p>
                 One actor controls the continuous Cartesian pose while a
@@ -170,7 +193,6 @@
             </article>
             <article>
               <span class="card-number">02</span>
-              <div class="card-icon" aria-hidden="true">⇄</div>
               <h3>Centralized critic</h3>
               <p>
                 An omniscient joint critic observes both agents during
@@ -180,7 +202,6 @@
             </article>
             <article>
               <span class="card-number">03</span>
-              <div class="card-icon" aria-hidden="true">◎</div>
               <h3>Reward decomposition</h3>
               <p>
                 A multi-head hybrid reward architecture learns simpler
@@ -199,7 +220,7 @@
         </div>
         <div class="section-content">
           <div class="section-heading">
-            <h2>Evidence, at a glance</h2>
+            <h2>Experimental results</h2>
             <p>
               CTDE improves object-picking success and solves manipulation
               tasks on which the baseline fails.
@@ -207,18 +228,29 @@
           </div>
 
           <div class="result-panel">
-            <div
-              class="result-chart"
-              role="img"
-              aria-label="Baseline and CTDE success rates: tennis ball 60 versus 80 percent; banana 60 versus 90 percent"
-            >
-              <i class="baseline" style="--height: 60%"></i>
-              <i class="ours" style="--height: 80%"></i>
-              <i class="baseline" style="--height: 60%"></i>
-              <i class="ours" style="--height: 90%"></i>
-            </div>
+            <figure class="result-figure">
+              <div class="chart-legend" aria-hidden="true">
+                <span><i class="key-baseline"></i>Baseline</span>
+                <span><i class="key-ours"></i>CTDE</span>
+              </div>
+              <div
+                class="result-chart"
+                role="img"
+                aria-label="Baseline and CTDE success rates: tennis ball 60 versus 80 percent; banana 60 versus 90 percent"
+              >
+                <i class="baseline" style="--height: 60%"></i>
+                <i class="ours" style="--height: 80%"></i>
+                <i class="baseline" style="--height: 60%"></i>
+                <i class="ours" style="--height: 90%"></i>
+              </div>
+              <div class="chart-labels" aria-hidden="true">
+                <span>Tennis ball</span>
+                <span>Banana</span>
+              </div>
+              <figcaption>Success rate (%) over real-world picking trials</figcaption>
+            </figure>
             <div>
-              <p class="eyebrow">Picking success · baseline → CTDE</p>
+              <p class="eyebrow">Picking success</p>
               <h3>60→80% on tennis ball.<br />60→90% on banana.</h3>
               <p>
                 The framework also succeeds at pot resetting and lid covering,
@@ -243,7 +275,7 @@
         </div>
         <div class="section-content">
           <div class="section-heading">
-            <h2>Explore the project</h2>
+            <h2>Resources</h2>
             <p>Watch the robot experiments or explore the website source.</p>
           </div>
 
