@@ -1,4 +1,4 @@
-# HiL-HySAC project page
+# HiL-HySAC: real-world RL with hybrid action spaces
 
 This repository contains the static project page published at
 <https://evanzhangyifang.github.io/HiL-HySac.github.io/>.
@@ -17,12 +17,16 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000>.
 
-## Add the final project content
+## Project
 
-The page currently contains clearly labelled placeholders because the paper
-metadata, abstract, results, authors, and public resource links have not yet
-been provided. Follow [docs/CONTENT.md](docs/CONTENT.md) for the exact fields
-that need to be supplied.
+This page presents a real-world online reinforcement learning framework for
+robot manipulation with hybrid action spaces. The method uses centralized
+training with decentralized execution (CTDE): separate actor-agents control the
+continuous Cartesian arm pose and discrete gripper actions, while a centralized
+multi-head critic coordinates training through reward decomposition.
+
+The project metadata and reported results are recorded in
+[docs/PROJECT.md](docs/PROJECT.md).
 
 Most text is in `index.html`. Visual styling is in `styles.css`, and the small
 copy-to-clipboard interaction is in `script.js`.
@@ -44,7 +48,7 @@ The expected URL is
 ├── assets/
 │   └── favicon.svg
 ├── docs/
-│   └── CONTENT.md
+│   └── PROJECT.md
 ├── .nojekyll
 ├── index.html
 ├── script.js
@@ -53,8 +57,8 @@ The expected URL is
 
 ## Before release
 
-- Replace every `TODO` comment in `index.html`.
-- Search for placeholder em dashes (`—`) and “coming soon”.
+- Add the official paper URL and BibTeX once available.
+- Replace the CSS-rendered result summary with the final publication figure.
 - Test the page at desktop and mobile widths.
 - Confirm every external link and the citation.
 - Add a social preview image at `assets/social-card.png`, then add

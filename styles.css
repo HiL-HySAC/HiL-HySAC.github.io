@@ -171,17 +171,40 @@ h1 em,
 }
 
 .authors {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
   margin-top: 2.5rem;
   color: var(--muted);
   font-size: 0.85rem;
 }
 
-.authors i {
+.author-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.author-list a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration-color: var(--line);
+  text-underline-offset: 0.25rem;
+}
+
+.author-list a:hover {
+  color: var(--signal);
+}
+
+.authors p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0.75rem 0 0;
+}
+
+.authors p i {
   width: 3px;
   height: 3px;
+  display: inline-block;
   background: var(--signal);
   border-radius: 50%;
 }
@@ -427,14 +450,14 @@ h1 em,
   line-height: 1.7;
 }
 
-.result-placeholder {
+.result-panel {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   min-height: 370px;
   background: var(--paper-deep);
 }
 
-.placeholder-chart {
+.result-chart {
   display: flex;
   gap: 6%;
   align-items: end;
@@ -445,24 +468,32 @@ h1 em,
     linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 20% 100%;
 }
 
-.placeholder-chart i {
-  width: 11%;
+.result-chart i {
+  width: 17%;
   height: var(--height);
   background: var(--signal);
 }
 
-.result-placeholder > div:last-child {
+.result-chart i.baseline {
+  background: #a5a198;
+}
+
+.result-chart i.ours {
+  background: var(--signal);
+}
+
+.result-panel > div:last-child {
   align-self: center;
   padding: 4rem;
 }
 
-.result-placeholder h3 {
+.result-panel h3 {
   margin: 0 0 1rem;
   font-size: 2rem;
   letter-spacing: -0.04em;
 }
 
-.result-placeholder p:last-child {
+.result-panel p:last-child {
   color: var(--muted);
   line-height: 1.7;
 }
@@ -615,7 +646,7 @@ footer {
   }
 
   .method-grid,
-  .result-placeholder {
+  .result-panel {
     grid-template-columns: 1fr;
   }
 
@@ -625,7 +656,7 @@ footer {
     border-bottom: 1px solid #3c3e39;
   }
 
-  .placeholder-chart {
+  .result-chart {
     min-height: 320px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
@@ -677,8 +708,8 @@ footer {
     padding-inline: 16px;
   }
 
-  .result-placeholder > div:last-child,
-  .placeholder-chart {
+  .result-panel > div:last-child,
+  .result-chart {
     padding: 2rem;
   }
 
