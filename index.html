@@ -183,8 +183,8 @@
               <h3>Human-guided online RL</h3>
               <p>
                 RLPD mixes autonomous experience, demonstrations, and
-                corrective human interventions. Each task starts from 20
-                teleoperated demonstrations.
+                corrective human interventions to support policy
+                initialization and efficient online learning.
               </p>
             </article>
             <article>
@@ -242,7 +242,7 @@
           <div class="section-heading">
             <h2>Experimental results</h2>
             <p>
-              The proposed method outperforms HIL-SERL across three
+              The proposed method outperforms HIL-SERL across
               large-randomization manipulation tasks on two robotic arms.
             </p>
           </div>
@@ -288,7 +288,6 @@
           <div class="metrics">
             <div><strong>+35 pp</strong><span>average absolute improvement</span></div>
             <div><strong>+55 pp</strong><span>maximum absolute improvement</span></div>
-            <div><strong>3 tasks</strong><span>across two robot arms</span></div>
           </div>
         </div>
       </section>
@@ -302,244 +301,284 @@
           <div class="section-heading">
             <h2>Robot experiments</h2>
             <p>
-              Training and evaluation rollouts for HiL-HySAC and the HIL-SERL
-              baseline. Playback speed is shown on each video.
+              Evaluation comparisons are shown first, followed by the complete
+              set of training rollouts. Playback speed appears on each video.
             </p>
           </div>
 
-          <div class="video-task">
-            <div class="video-task-heading">
-              <h3>Tennis-ball pick-and-place</h3>
-              <p>Evaluation comparison · 50 × 40 cm workspace</p>
+          <div class="video-phase">
+            <div class="video-phase-heading">
+              <p class="eyebrow">Evaluation</p>
+              <h3>Baseline comparisons</h3>
+              <p>
+                Side-by-side evaluation rollouts compare HIL-SERL with
+                HiL-HySAC under the same task settings.
+              </p>
             </div>
-            <div class="video-grid">
-              <figure class="video-card">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/tennis_baseline_eval_10.jpg"
-                  aria-label="HIL-SERL tennis-ball evaluation at ten times speed"
-                >
-                  <source
-                    src="assets/videos/tennis_baseline_eval_10.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HIL-SERL</strong>
-                  <span>Evaluation · 10× speed</span>
-                </figcaption>
-              </figure>
-              <figure class="video-card video-card-ours">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/tennis_hysac_eval_10.jpg"
-                  aria-label="HiL-HySAC tennis-ball evaluation at ten times speed"
-                >
-                  <source
-                    src="assets/videos/tennis_hysac_eval_10.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HiL-HySAC</strong>
-                  <span>Evaluation · 10× speed</span>
-                </figcaption>
-              </figure>
+
+            <div class="video-task">
+              <div class="video-task-heading">
+                <h4>Tennis-ball pick-and-place</h4>
+                <p>50 × 40 cm workspace</p>
+              </div>
+              <div class="video-grid">
+                <figure class="video-card">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/tennis_baseline_eval_10.jpg"
+                    aria-label="HIL-SERL tennis-ball evaluation at ten times speed"
+                  >
+                    <source
+                      src="assets/videos/tennis_baseline_eval_10.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HIL-SERL</strong>
+                    <span>Evaluation · 10× speed</span>
+                  </figcaption>
+                </figure>
+                <figure class="video-card video-card-ours">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/tennis_hysac_eval_10.jpg"
+                    aria-label="HiL-HySAC tennis-ball evaluation at ten times speed"
+                  >
+                    <source
+                      src="assets/videos/tennis_hysac_eval_10.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HiL-HySAC</strong>
+                    <span>Evaluation · 10× speed</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="video-task">
+              <div class="video-task-heading">
+                <h4>Banana pick-and-place</h4>
+                <p>30 × 30 cm workspace</p>
+              </div>
+              <div class="video-grid">
+                <figure class="video-card">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/banana_baseline_eval_10.jpg"
+                    aria-label="HIL-SERL banana evaluation at ten times speed"
+                  >
+                    <source
+                      src="assets/videos/banana_baseline_eval_10.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HIL-SERL</strong>
+                    <span>Evaluation · 10× speed</span>
+                  </figcaption>
+                </figure>
+                <figure class="video-card video-card-ours">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/banana_hysac_eval_10.jpg"
+                    aria-label="HiL-HySAC banana evaluation at ten times speed"
+                  >
+                    <source
+                      src="assets/videos/banana_hysac_eval_10.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HiL-HySAC</strong>
+                    <span>Evaluation · 10× speed</span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="video-task">
+              <div class="video-task-heading">
+                <h4>Pot reset</h4>
+                <p>40 × 40 cm workspace</p>
+              </div>
+              <div class="video-grid">
+                <figure class="video-card">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/pot_baseline_eval_10.jpg"
+                    aria-label="HIL-SERL pot-reset evaluation at ten times speed"
+                  >
+                    <source
+                      src="assets/videos/pot_baseline_eval_10.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HIL-SERL</strong>
+                    <span>Evaluation · 10× speed</span>
+                  </figcaption>
+                </figure>
+                <figure class="video-card video-card-ours">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/pot_hysac_eval_10.jpg"
+                    aria-label="HiL-HySAC pot-reset evaluation at ten times speed"
+                  >
+                    <source
+                      src="assets/videos/pot_hysac_eval_10.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HiL-HySAC</strong>
+                    <span>Evaluation · 10× speed</span>
+                  </figcaption>
+                </figure>
+              </div>
             </div>
           </div>
 
-          <div class="video-task">
-            <div class="video-task-heading">
-              <h3>Banana pick-and-place</h3>
-              <p>Training and evaluation · 30 × 30 cm workspace</p>
+          <div class="video-phase video-phase-training">
+            <div class="video-phase-heading">
+              <p class="eyebrow">Training</p>
+              <h3>Training rollouts</h3>
+              <p>
+                Accelerated rollouts show the behavior of the baseline and
+                HiL-HySAC policies during real-world online training.
+              </p>
             </div>
-            <div class="video-grid">
-              <figure class="video-card">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/banana_baseline_eval_10.jpg"
-                  aria-label="HIL-SERL banana evaluation at ten times speed"
-                >
-                  <source
-                    src="assets/videos/banana_baseline_eval_10.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HIL-SERL</strong>
-                  <span>Evaluation · 10× speed</span>
-                </figcaption>
-              </figure>
-              <figure class="video-card video-card-ours">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/banana_hysac_eval_10.jpg"
-                  aria-label="HiL-HySAC banana evaluation at ten times speed"
-                >
-                  <source
-                    src="assets/videos/banana_hysac_eval_10.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HiL-HySAC</strong>
-                  <span>Evaluation · 10× speed</span>
-                </figcaption>
-              </figure>
-              <figure class="video-card">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/banana_baseline_train_100.jpg"
-                  aria-label="HIL-SERL banana training at one hundred times speed"
-                >
-                  <source
-                    src="assets/videos/banana_baseline_train_100.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HIL-SERL</strong>
-                  <span>Training · 100× speed</span>
-                </figcaption>
-              </figure>
-              <figure class="video-card video-card-ours">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/banana_hysac_train_100.jpg"
-                  aria-label="HiL-HySAC banana training at one hundred times speed"
-                >
-                  <source
-                    src="assets/videos/banana_hysac_train_100.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HiL-HySAC</strong>
-                  <span>Training · 100× speed</span>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
 
-          <div class="video-task">
-            <div class="video-task-heading">
-              <h3>Pot reset</h3>
-              <p>Training and evaluation · 40 × 40 cm workspace</p>
+            <div class="video-task">
+              <div class="video-task-heading">
+                <h4>Banana pick-and-place</h4>
+                <p>Training progression</p>
+              </div>
+              <div class="video-grid">
+                <figure class="video-card">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/banana_baseline_train_100.jpg"
+                    aria-label="HIL-SERL banana training at one hundred times speed"
+                  >
+                    <source
+                      src="assets/videos/banana_baseline_train_100.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HIL-SERL</strong>
+                    <span>Training · 100× speed</span>
+                  </figcaption>
+                </figure>
+                <figure class="video-card video-card-ours">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/banana_hysac_train_100.jpg"
+                    aria-label="HiL-HySAC banana training at one hundred times speed"
+                  >
+                    <source
+                      src="assets/videos/banana_hysac_train_100.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HiL-HySAC</strong>
+                    <span>Training · 100× speed</span>
+                  </figcaption>
+                </figure>
+              </div>
             </div>
-            <div class="video-grid">
-              <figure class="video-card">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/pot_baseline_eval_10.jpg"
-                  aria-label="HIL-SERL pot-reset evaluation at ten times speed"
-                >
-                  <source
-                    src="assets/videos/pot_baseline_eval_10.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HIL-SERL</strong>
-                  <span>Evaluation · 10× speed</span>
-                </figcaption>
-              </figure>
-              <figure class="video-card video-card-ours">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/pot_hysac_eval_10.jpg"
-                  aria-label="HiL-HySAC pot-reset evaluation at ten times speed"
-                >
-                  <source
-                    src="assets/videos/pot_hysac_eval_10.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HiL-HySAC</strong>
-                  <span>Evaluation · 10× speed</span>
-                </figcaption>
-              </figure>
-              <figure class="video-card">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/pot_baseline_train_100.jpg"
-                  aria-label="HIL-SERL pot-reset training at one hundred times speed"
-                >
-                  <source
-                    src="assets/videos/pot_baseline_train_100.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HIL-SERL</strong>
-                  <span>Training · 100× speed</span>
-                </figcaption>
-              </figure>
-              <figure class="video-card video-card-ours">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/pot_hysac_train_10.jpg"
-                  aria-label="HiL-HySAC pot-reset training at ten times speed"
-                >
-                  <source
-                    src="assets/videos/pot_hysac_train_10.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HiL-HySAC</strong>
-                  <span>Training · 10× speed</span>
-                </figcaption>
-              </figure>
-              <figure class="video-card video-card-ours">
-                <video
-                  controls
-                  preload="none"
-                  playsinline
-                  poster="assets/videos/pot_hysac_train_100.jpg"
-                  aria-label="HiL-HySAC pot-reset training at one hundred times speed"
-                >
-                  <source
-                    src="assets/videos/pot_hysac_train_100.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support HTML5 video.
-                </video>
-                <figcaption>
-                  <strong>HiL-HySAC</strong>
-                  <span>Training · 100× speed</span>
-                </figcaption>
-              </figure>
+
+            <div class="video-task">
+              <div class="video-task-heading">
+                <h4>Pot reset</h4>
+                <p>Training progression</p>
+              </div>
+              <div class="video-grid">
+                <figure class="video-card">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/pot_baseline_train_100.jpg"
+                    aria-label="HIL-SERL pot-reset training at one hundred times speed"
+                  >
+                    <source
+                      src="assets/videos/pot_baseline_train_100.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HIL-SERL</strong>
+                    <span>Training · 100× speed</span>
+                  </figcaption>
+                </figure>
+                <figure class="video-card video-card-ours">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/pot_hysac_train_10.jpg"
+                    aria-label="HiL-HySAC pot-reset training at ten times speed"
+                  >
+                    <source
+                      src="assets/videos/pot_hysac_train_10.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HiL-HySAC</strong>
+                    <span>Training · 10× speed</span>
+                  </figcaption>
+                </figure>
+                <figure class="video-card video-card-ours">
+                  <video
+                    controls
+                    preload="none"
+                    playsinline
+                    poster="assets/videos/pot_hysac_train_100.jpg"
+                    aria-label="HiL-HySAC pot-reset training at one hundred times speed"
+                  >
+                    <source
+                      src="assets/videos/pot_hysac_train_100.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support HTML5 video.
+                  </video>
+                  <figcaption>
+                    <strong>HiL-HySAC</strong>
+                    <span>Training · 100× speed</span>
+                  </figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </div>

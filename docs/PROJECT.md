@@ -49,8 +49,7 @@ real-world manipulation tasks:
 - pot resetting.
 
 The experiments use randomization zones approximately ten times larger than
-prior work. Each task begins with 20 teleoperated demonstrations and evaluation
-uses 20 episodes.
+prior work. Evaluation uses 20 episodes per task.
 
 ## Headline results
 
@@ -59,7 +58,7 @@ uses 20 episodes.
 - Banana picking improves from 60% to 90% success: **+30 percentage points**,
   or **50% relative improvement**.
 - Pot resetting improves from 0% to **55%**.
-- The average absolute improvement across the three tasks is **35 percentage
+- The average absolute improvement across the evaluated tasks is **35 percentage
   points**.
 - The maximum absolute improvement is **55 percentage points** on pot reset.
 
