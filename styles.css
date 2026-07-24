@@ -487,6 +487,40 @@ h1 span {
   font-size: 0.94rem;
 }
 
+.method-framework {
+  margin: 2rem 0 0;
+}
+
+.method-framework a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: #fff;
+}
+
+.method-framework a:hover {
+  border-color: #a9c4dc;
+}
+
+.method-framework img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.method-framework figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.86rem;
+}
+
+.method-framework figcaption strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .result-panel {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;

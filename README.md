@@ -47,6 +47,9 @@ The expected URL is
 .
 ├── assets/
 │   ├── favicon.svg
+│   ├── figs/
+│   │   ├── training_framework.pdf
+│   │   └── training_framework.png
 │   └── videos/
 │       ├── *.mp4
 │       └── *.jpg

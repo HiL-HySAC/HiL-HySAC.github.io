@@ -15,10 +15,12 @@ Hybrid Actions and Reward-Decomposed Critics**
    di Tecnologia; DRIM and University of Genova —
    [ORCID](https://orcid.org/0000-0003-4832-9668)
 4. Davide Torielli — HHCM, Istituto Italiano di Tecnologia; DIBRIS, University
-   of Genova
+   of Genova — [ORCID](https://orcid.org/0000-0002-7639-4232)
 5. Damiano Gasperini — HHCM, Istituto Italiano di Tecnologia; DIBRIS,
-   University of Genova
-6. Luca Muratore — DIBRIS, University of Genova
+   University of Genova —
+   [ORCID](https://orcid.org/0000-0002-7639-4232)
+6. Luca Muratore — DIBRIS, University of Genova —
+   [ORCID](https://orcid.org/0000-0002-1265-3370)
 7. Arash Ajoudani — Human-Robot Interfaces and Interaction Lab, Istituto
    Italiano di Tecnologia —
    [ORCID](https://orcid.org/0000-0002-1261-737X)
@@ -62,7 +64,6 @@ uses 20 episodes.
 ## Links
 
 - Live site: <https://hil-hysac.github.io/>
-- Website source: <https://github.com/HiL-HySAC/HiL-HySAC.github.io>
 
 ## Publication items still required
 

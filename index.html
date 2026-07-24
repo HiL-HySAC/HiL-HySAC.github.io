@@ -67,9 +67,9 @@
               <a href="https://orcid.org/0009-0006-1754-0283">Changhao Li<sup>1,2</sup></a>
               <a href="https://orcid.org/0000-0002-7639-4232">Yifang Zhang<sup>1,2</sup></a>
               <a href="https://orcid.org/0000-0003-4832-9668">Heng Zhang<sup>3,4</sup></a>
-              <span>Davide Torielli<sup>1,2</sup></span>
-              <span>Damiano Gasperini<sup>1,2</sup></span>
-              <span>Luca Muratore<sup>2</sup></span>
+              <a href="https://orcid.org/0000-0002-7639-4232">Davide Torielli<sup>1,2</sup></a>
+              <a href="https://orcid.org/0000-0002-7639-4232">Damiano Gasperini<sup>1,2</sup></a>
+              <a href="https://orcid.org/0000-0002-1265-3370">Luca Muratore<sup>2</sup></a>
               <a href="https://orcid.org/0000-0002-1261-737X">Arash Ajoudani<sup>3</sup></a>
               <a href="https://orcid.org/0000-0002-9877-8237">Nikos Tsagarakis<sup>2</sup></a>
             </div>
@@ -81,14 +81,6 @@
             </div>
           </div>
 
-          <div class="actions" aria-label="Project links">
-            <a
-              class="button button-primary"
-              href="https://github.com/HiL-HySAC/HiL-HySAC.github.io"
-            >
-              Website source
-            </a>
-          </div>
         </div>
 
         <div
@@ -214,6 +206,30 @@
               </p>
             </article>
           </div>
+
+          <figure class="method-framework">
+            <a
+              href="assets/figs/training_framework.pdf"
+              target="_blank"
+              rel="noopener"
+              aria-label="Open the training framework diagram as a PDF"
+            >
+              <img
+                src="assets/figs/training_framework.png"
+                width="1979"
+                height="868"
+                loading="lazy"
+                alt="Training framework showing the robot environment, human intervention and policy interaction, policy and demonstration replay buffers, feature extraction, reward-decomposed multi-head critic, decentralized arm and gripper actors, and asynchronous rollout, training, and weight-update processes."
+              />
+            </a>
+            <figcaption>
+              <strong>Training framework.</strong> Human demonstrations and
+              corrective interventions are stored alongside autonomous
+              experience. A cloud-based learner updates the reward-decomposed
+              critic and decentralized actors asynchronously, then
+              synchronizes the latest policy weights with the deployed robot.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -535,15 +551,7 @@
         <div class="section-content">
           <div class="section-heading">
             <h2>Resources</h2>
-            <p>Explore the source and documentation for this project page.</p>
-          </div>
-
-          <div class="resource-list">
-            <a href="https://github.com/HiL-HySAC/HiL-HySAC.github.io">
-              <span>Repository</span>
-              <small>Website source</small>
-              <b aria-hidden="true">↗</b>
-            </a>
+            <p>Publication and citation details for this project.</p>
           </div>
 
           <div class="citation">
