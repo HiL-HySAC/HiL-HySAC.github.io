@@ -1,7 +1,7 @@
-# HiL-HySAC: real-world RL with hybrid action spaces
+# HiL-HySAC: efficient real-world online reinforcement learning
 
 This repository contains the static project page published at
-<https://evanzhangyifang.github.io/HiL-HySac.github.io/>.
+<https://hil-hysac.github.io/>.
 
 The site intentionally has no build step or framework. It is plain HTML, CSS,
 and JavaScript, so GitHub Pages can serve it directly and contributors can
@@ -39,14 +39,17 @@ copy-to-clipboard interaction is in `script.js`.
 4. Save and wait for the Pages deployment to finish.
 
 The expected URL is
-<https://evanzhangyifang.github.io/HiL-HySac.github.io/>.
+<https://hil-hysac.github.io/>.
 
 ## Repository layout
 
 ```text
 .
 ├── assets/
-│   └── favicon.svg
+│   ├── favicon.svg
+│   └── videos/
+│       ├── *.mp4
+│       └── *.jpg
 ├── docs/
 │   └── PROJECT.md
 ├── .nojekyll
@@ -62,7 +65,7 @@ The expected URL is
 - Test the page at desktop and mobile widths.
 - Confirm every external link and the citation.
 - Add a social preview image at `assets/social-card.png`, then add
-  `<meta property="og:image" content="https://evanzhangyifang.github.io/HiL-HySac.github.io/assets/social-card.png">`
+  `<meta property="og:image" content="https://hil-hysac.github.io/assets/social-card.png">`
   to the page `<head>`.
 - Add the project’s chosen license. No license is assumed by this scaffold.
 

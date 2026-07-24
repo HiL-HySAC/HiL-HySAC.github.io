@@ -2,47 +2,53 @@
 
 ## Title
 
-**Real-World RL with Hybrid Action Spaces and Multi-head Critic via Centralized
-Training with Decentralized Execution for Robot Manipulation**
+**Efficient Real-World Online Reinforcement Learning for Robot Manipulation via
+Hybrid Actions and Reward-Decomposed Critics**
 
 ## Authors
 
 1. Changhao Li — HHCM, Istituto Italiano di Tecnologia; DIBRIS, University of
-   Genoa — [ORCID](https://orcid.org/0009-0006-1754-0283)
+   Genova — [ORCID](https://orcid.org/0009-0006-1754-0283)
 2. Yifang Zhang — HHCM, Istituto Italiano di Tecnologia; DIBRIS, University of
-   Genoa — [ORCID](https://orcid.org/0000-0002-7639-4232)
+   Genova — [ORCID](https://orcid.org/0000-0002-7639-4232)
 3. Heng Zhang — Human-Robot Interfaces and Interaction Lab, Istituto Italiano
-   di Tecnologia; DRIM and University of Genoa —
+   di Tecnologia; DRIM and University of Genova —
    [ORCID](https://orcid.org/0000-0003-4832-9668)
-4. Arash Ajoudani — Human-Robot Interfaces and Interaction Lab, Istituto
+4. Davide Torielli — HHCM, Istituto Italiano di Tecnologia; DIBRIS, University
+   of Genova
+5. Damiano Gasperini — HHCM, Istituto Italiano di Tecnologia; DIBRIS,
+   University of Genova
+6. Luca Muratore — DIBRIS, University of Genova
+7. Arash Ajoudani — Human-Robot Interfaces and Interaction Lab, Istituto
    Italiano di Tecnologia —
    [ORCID](https://orcid.org/0000-0002-1261-737X)
-5. Nikos Tsagarakis — DIBRIS, University of Genoa —
+8. Nikos Tsagarakis — DIBRIS, University of Genova —
    [ORCID](https://orcid.org/0000-0002-9877-8237)
 
 Contact: `changhao.li@papercept.net`
 
 ## Method summary
 
-The method applies centralized training with decentralized execution (CTDE) to
-hybrid-action reinforcement learning. Cartesian pose control and gripper control
-are decoupled into two actor-agents. An omniscient joint critic coordinates
-training, while a multi-head hybrid reward architecture decomposes the value
-target into simpler sub-tasks. The grasp-head Q-value reshapes the policy loss,
-and a worst-case constraint promotes safe exploration.
+The method combines an RLPD-based human-in-the-loop online RL pipeline with
+centralized training and decentralized execution (CTDE) and Hybrid Reward
+Architecture (HRA). A continuous SAC actor controls 6-DoF Cartesian motion,
+while a discrete SAC actor selects open, close, or stay for the gripper. Both
+actors share a centralized critic decomposed into sparse task-reward and
+potential-based grasp-reward Q-value heads. The decomposed Q-values are used to
+reformulate the actor objectives for more stable and sample-efficient learning.
 
 ## Evaluation
 
-The framework is evaluated on a robotic arm and a humanoid robot in four
+The framework is evaluated on the Inail arm and Franka Emika Panda arm in three
 real-world manipulation tasks:
 
 - tennis-ball pick-and-place;
 - banana pick-and-place;
-- pot resetting; and
-- lid covering.
+- pot resetting.
 
 The experiments use randomization zones approximately ten times larger than
-prior work.
+prior work. Each task begins with 20 teleoperated demonstrations and evaluation
+uses 20 episodes.
 
 ## Headline results
 
@@ -50,7 +56,8 @@ prior work.
   points**, or approximately **33% relative improvement**.
 - Banana picking improves from 60% to 90% success: **+30 percentage points**,
   or **50% relative improvement**.
-- CTDE succeeds on manipulation tasks where the baseline entirely fails.
+- Pot resetting improves from 0% to **55%**.
+- Average success across the three tasks improves from **40% to 75%**.
 
 ## Links
 

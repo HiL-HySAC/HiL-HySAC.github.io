@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Real-world reinforcement learning with hybrid action spaces, decentralized actor-agents, and a centralized multi-head critic for robot manipulation."
+      content="Efficient real-world online reinforcement learning for robot manipulation using hybrid actions, centralized training with decentralized execution, and reward-decomposed critics."
     />
     <meta name="theme-color" content="#ffffff" />
 
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Real-World RL with Hybrid Action Spaces and a Multi-Head Critic"
+      content="Efficient Real-World Online Reinforcement Learning for Robot Manipulation"
     />
     <meta
       property="og:description"
-      content="Centralized training with decentralized execution for robust, real-world robot manipulation."
+      content="Hybrid actions and reward-decomposed critics for sample-efficient, real-world robot manipulation."
     />
     <meta
       property="og:url"
       content="https://hil-hysac.github.io/"
     />
 
-    <title>Real-World RL with Hybrid Action Spaces — HiL-HySAC</title>
+    <title>Efficient Real-World Online Reinforcement Learning — HiL-HySAC</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
@@ -41,6 +41,7 @@
         <a href="#overview">Overview</a>
         <a href="#method">Method</a>
         <a href="#results">Results</a>
+        <a href="#videos">Videos</a>
         <a href="#resources">Resources</a>
       </nav>
     </header>
@@ -50,15 +51,15 @@
         <div class="hero-copy">
           <p class="eyebrow">Real-world reinforcement learning for robot manipulation</p>
           <h1>
-            Real-World RL with Hybrid Action Spaces and Multi-Head Critic
+            Efficient Real-World Online Reinforcement Learning for Robot Manipulation
             <span>
-              via Centralized Training with Decentralized Execution for Robot
-              Manipulation
+              via Hybrid Actions and Reward-Decomposed Critics
             </span>
           </h1>
           <p class="lede">
-            A multi-agent framework for learning continuous arm motion and
-            discrete gripper control directly on physical robots.
+            A human-in-the-loop framework that combines CTDE and Hybrid Reward
+            Architecture to learn continuous arm motion and discrete gripper
+            control directly on physical robots.
           </p>
 
           <div class="authors">
@@ -66,14 +67,17 @@
               <a href="https://orcid.org/0009-0006-1754-0283">Changhao Li<sup>1,2</sup></a>
               <a href="https://orcid.org/0000-0002-7639-4232">Yifang Zhang<sup>1,2</sup></a>
               <a href="https://orcid.org/0000-0003-4832-9668">Heng Zhang<sup>3,4</sup></a>
+              <span>Davide Torielli<sup>1,2</sup></span>
+              <span>Damiano Gasperini<sup>1,2</sup></span>
+              <span>Luca Muratore<sup>2</sup></span>
               <a href="https://orcid.org/0000-0002-1261-737X">Arash Ajoudani<sup>3</sup></a>
               <a href="https://orcid.org/0000-0002-9877-8237">Nikos Tsagarakis<sup>2</sup></a>
             </div>
             <div class="affiliations">
               <p><sup>1</sup> HHCM, Istituto Italiano di Tecnologia</p>
-              <p><sup>2</sup> DIBRIS, University of Genoa</p>
+              <p><sup>2</sup> DIBRIS, University of Genova</p>
               <p><sup>3</sup> Human-Robot Interfaces and Interaction Lab, IIT</p>
-              <p><sup>4</sup> DRIM, University of Genoa</p>
+              <p><sup>4</sup> DRIM, University of Genova</p>
             </div>
           </div>
 
@@ -109,7 +113,7 @@
           <div class="diagram-column">
             <p>Centralized training</p>
             <div class="node node-primary">
-              <span>Omniscient value model</span>
+              <span>Shared global information</span>
               <strong>Multi-head joint critic</strong>
             </div>
           </div>
@@ -121,11 +125,11 @@
             <p>Hybrid reward architecture</p>
             <div class="node">
               <span>Task objectives</span>
-              <strong>Multiple value heads</strong>
+              <strong>Task Q-value head</strong>
             </div>
             <div class="node">
-              <span>Policy shaping</span>
-              <strong>Grasp-head Q-value</strong>
+              <span>Potential-based shaping</span>
+              <strong>Grasp Q-value head</strong>
             </div>
           </div>
         </div>
@@ -136,8 +140,8 @@
       </section>
 
       <section class="stats" aria-label="Project highlights">
-        <div><strong>80%</strong><span>tennis-ball success</span></div>
-        <div><strong>90%</strong><span>banana success</span></div>
+        <div><strong>75%</strong><span>average success rate</span></div>
+        <div><strong>40→75%</strong><span>average baseline to ours</span></div>
         <div><strong>≈10×</strong><span>larger randomization zones</span></div>
       </section>
 
@@ -149,17 +153,20 @@
         <div class="section-content">
           <h2 class="display-copy">Abstract</h2>
           <p class="body-copy">
-            Real-world online reinforcement learning bypasses the sim-to-real
-            gap, but existing human-in-the-loop methods often explore small
-            workspaces and struggle when one policy must learn continuous robot
-            motion alongside discrete gripper actions. Our CTDE framework
-            decouples Cartesian pose and gripper control into two actor-agents
-            while an omniscient joint critic coordinates their training. A
-            multi-head hybrid reward architecture decomposes the learning
-            target, and a worst-case constraint promotes safe exploration.
-            Across robotic-arm and humanoid experiments, the method learns
-            robust manipulation under randomization zones approximately ten
-            times larger than prior work with minimal human supervision.
+            Real-world online reinforcement learning trains manipulation
+            policies directly in the physical world, bypassing the sim-to-real
+            gap and enabling interactive improvement through human
+            intervention. Existing approaches, however, are often limited to
+            small randomization ranges and become unstable when continuous arm
+            control and discrete gripper control are learned jointly. We
+            integrate centralized training with decentralized execution (CTDE)
+            and Hybrid Reward Architecture (HRA), decoupling Cartesian motion
+            and gripper control into two actors that share a centralized
+            multi-head critic. The critic separates sparse task reward from
+            potential-based grasp reward, while decomposed Q-values reformulate
+            the actor objectives. Experiments on two robotic arms show improved
+            sample efficiency and policy performance across large-randomization
+            tennis-ball, banana, and pot manipulation tasks.
           </p>
         </div>
       </section>
@@ -173,37 +180,37 @@
           <div class="section-heading">
             <h2>Method</h2>
             <p>
-              Hybrid control is separated at execution and coordinated during
-              training through shared value estimation.
+              Human-guided online experience, hybrid-action CTDE, and reward
+              decomposition work together to stabilize and accelerate learning.
             </p>
           </div>
 
           <div class="method-grid">
             <article>
               <span class="card-number">01</span>
-              <h3>Decentralized actors</h3>
+              <h3>Human-guided online RL</h3>
               <p>
-                One actor controls the continuous Cartesian pose while a
-                second actor controls discrete gripper actions, avoiding the
-                instability of a single hybrid-action policy.
+                RLPD mixes autonomous experience, demonstrations, and
+                corrective human interventions. Each task starts from 20
+                teleoperated demonstrations.
               </p>
             </article>
             <article>
               <span class="card-number">02</span>
-              <h3>Centralized critic</h3>
+              <h3>Hybrid-action CTDE</h3>
               <p>
-                An omniscient joint critic observes both agents during
-                training, coordinating their learning while preserving
-                independent, decentralized execution.
+                A continuous SAC actor controls 6-DoF Cartesian motion and a
+                discrete SAC actor selects open, close, or stay. A shared
+                centralized critic mitigates multi-agent non-stationarity.
               </p>
             </article>
             <article>
               <span class="card-number">03</span>
-              <h3>Reward decomposition</h3>
+              <h3>Reward-decomposed critic</h3>
               <p>
-                A multi-head hybrid reward architecture learns simpler
-                sub-targets. The grasp-head Q-value reshapes the actor loss,
-                improving sample efficiency and convergence.
+                HRA splits value estimation into task and grasp Q-value heads.
+                The decomposed values reshape both actor objectives, improving
+                sample efficiency and convergence under noisy RGB observations.
               </p>
             </article>
           </div>
@@ -219,55 +226,310 @@
           <div class="section-heading">
             <h2>Experimental results</h2>
             <p>
-              CTDE improves object-picking success and solves manipulation
-              tasks on which the baseline fails.
+              The proposed method outperforms HIL-SERL across three
+              large-randomization manipulation tasks on two robotic arms.
             </p>
           </div>
 
           <div class="result-panel">
             <figure class="result-figure">
               <div class="chart-legend" aria-hidden="true">
-                <span><i class="key-baseline"></i>Baseline</span>
-                <span><i class="key-ours"></i>CTDE</span>
+                <span><i class="key-baseline"></i>HIL-SERL</span>
+                <span><i class="key-ours"></i>Ours</span>
               </div>
               <div
                 class="result-chart"
                 role="img"
-                aria-label="Baseline and CTDE success rates: tennis ball 60 versus 80 percent; banana 60 versus 90 percent"
+                aria-label="HIL-SERL and our success rates: tennis ball 60 versus 80 percent; banana 60 versus 90 percent; pot reset 0 versus 55 percent"
               >
                 <i class="baseline" style="--height: 60%"></i>
                 <i class="ours" style="--height: 80%"></i>
                 <i class="baseline" style="--height: 60%"></i>
                 <i class="ours" style="--height: 90%"></i>
+                <i class="baseline" style="--height: 0%"></i>
+                <i class="ours" style="--height: 55%"></i>
               </div>
               <div class="chart-labels" aria-hidden="true">
                 <span>Tennis ball</span>
                 <span>Banana</span>
+                <span>Pot reset</span>
               </div>
-              <figcaption>Success rate (%) over real-world picking trials</figcaption>
+              <figcaption>Success rate (%) over 20 real-world evaluation episodes</figcaption>
             </figure>
             <div>
-              <p class="eyebrow">Picking success</p>
-              <h3>60→80% on tennis ball.<br />60→90% on banana.</h3>
+              <p class="eyebrow">Evaluation success</p>
+              <h3>Average success rises from 40% to 75%.</h3>
               <p>
-                The framework also succeeds at pot resetting and lid covering,
-                tasks on which the baseline entirely fails. Experiments span a
-                robotic arm and a humanoid robot.
+                Tennis-ball success improves from 60% to 80%, banana success
+                from 60% to 90%, and pot reset from 0% to 55%. Each result is
+                measured over 20 evaluation episodes after real-world training.
               </p>
             </div>
           </div>
 
           <div class="metrics">
-            <div><strong>+20 pp</strong><span>tennis-ball absolute gain</span></div>
-            <div><strong>+30 pp</strong><span>banana absolute gain</span></div>
-            <div><strong>4 tasks</strong><span>across two robot platforms</span></div>
+            <div><strong>+35 pp</strong><span>average absolute gain</span></div>
+            <div><strong>20 demos</strong><span>initial demonstrations per task</span></div>
+            <div><strong>3 tasks</strong><span>across two robot arms</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section videos" id="videos">
+        <div class="section-label">
+          <span>04</span>
+          <p>Videos</p>
+        </div>
+        <div class="section-content">
+          <div class="section-heading">
+            <h2>Robot experiments</h2>
+            <p>
+              Training and evaluation rollouts for HiL-HySAC and the HIL-SERL
+              baseline. Playback speed is shown on each video.
+            </p>
+          </div>
+
+          <div class="video-task">
+            <div class="video-task-heading">
+              <h3>Tennis-ball pick-and-place</h3>
+              <p>Evaluation comparison · 50 × 40 cm workspace</p>
+            </div>
+            <div class="video-grid">
+              <figure class="video-card">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/tennis_baseline_eval_10.jpg"
+                  aria-label="HIL-SERL tennis-ball evaluation at ten times speed"
+                >
+                  <source
+                    src="assets/videos/tennis_baseline_eval_10.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HIL-SERL</strong>
+                  <span>Evaluation · 10× speed</span>
+                </figcaption>
+              </figure>
+              <figure class="video-card video-card-ours">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/tennis_hysac_eval_10.jpg"
+                  aria-label="HiL-HySAC tennis-ball evaluation at ten times speed"
+                >
+                  <source
+                    src="assets/videos/tennis_hysac_eval_10.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HiL-HySAC</strong>
+                  <span>Evaluation · 10× speed</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="video-task">
+            <div class="video-task-heading">
+              <h3>Banana pick-and-place</h3>
+              <p>Training and evaluation · 30 × 30 cm workspace</p>
+            </div>
+            <div class="video-grid">
+              <figure class="video-card">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/banana_baseline_eval_10.jpg"
+                  aria-label="HIL-SERL banana evaluation at ten times speed"
+                >
+                  <source
+                    src="assets/videos/banana_baseline_eval_10.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HIL-SERL</strong>
+                  <span>Evaluation · 10× speed</span>
+                </figcaption>
+              </figure>
+              <figure class="video-card video-card-ours">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/banana_hysac_eval_10.jpg"
+                  aria-label="HiL-HySAC banana evaluation at ten times speed"
+                >
+                  <source
+                    src="assets/videos/banana_hysac_eval_10.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HiL-HySAC</strong>
+                  <span>Evaluation · 10× speed</span>
+                </figcaption>
+              </figure>
+              <figure class="video-card">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/banana_baseline_train_100.jpg"
+                  aria-label="HIL-SERL banana training at one hundred times speed"
+                >
+                  <source
+                    src="assets/videos/banana_baseline_train_100.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HIL-SERL</strong>
+                  <span>Training · 100× speed</span>
+                </figcaption>
+              </figure>
+              <figure class="video-card video-card-ours">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/banana_hysac_train_100.jpg"
+                  aria-label="HiL-HySAC banana training at one hundred times speed"
+                >
+                  <source
+                    src="assets/videos/banana_hysac_train_100.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HiL-HySAC</strong>
+                  <span>Training · 100× speed</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="video-task">
+            <div class="video-task-heading">
+              <h3>Pot reset</h3>
+              <p>Training and evaluation · 40 × 40 cm workspace</p>
+            </div>
+            <div class="video-grid">
+              <figure class="video-card">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/pot_baseline_eval_10.jpg"
+                  aria-label="HIL-SERL pot-reset evaluation at ten times speed"
+                >
+                  <source
+                    src="assets/videos/pot_baseline_eval_10.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HIL-SERL</strong>
+                  <span>Evaluation · 10× speed</span>
+                </figcaption>
+              </figure>
+              <figure class="video-card video-card-ours">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/pot_hysac_eval_10.jpg"
+                  aria-label="HiL-HySAC pot-reset evaluation at ten times speed"
+                >
+                  <source
+                    src="assets/videos/pot_hysac_eval_10.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HiL-HySAC</strong>
+                  <span>Evaluation · 10× speed</span>
+                </figcaption>
+              </figure>
+              <figure class="video-card">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/pot_baseline_train_100.jpg"
+                  aria-label="HIL-SERL pot-reset training at one hundred times speed"
+                >
+                  <source
+                    src="assets/videos/pot_baseline_train_100.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HIL-SERL</strong>
+                  <span>Training · 100× speed</span>
+                </figcaption>
+              </figure>
+              <figure class="video-card video-card-ours">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/pot_hysac_train_10.jpg"
+                  aria-label="HiL-HySAC pot-reset training at ten times speed"
+                >
+                  <source
+                    src="assets/videos/pot_hysac_train_10.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HiL-HySAC</strong>
+                  <span>Training · 10× speed</span>
+                </figcaption>
+              </figure>
+              <figure class="video-card video-card-ours">
+                <video
+                  controls
+                  preload="none"
+                  playsinline
+                  poster="assets/videos/pot_hysac_train_100.jpg"
+                  aria-label="HiL-HySAC pot-reset training at one hundred times speed"
+                >
+                  <source
+                    src="assets/videos/pot_hysac_train_100.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support HTML5 video.
+                </video>
+                <figcaption>
+                  <strong>HiL-HySAC</strong>
+                  <span>Training · 100× speed</span>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section resources" id="resources">
         <div class="section-label">
-          <span>04</span>
+          <span>05</span>
           <p>Resources</p>
         </div>
         <div class="section-content">
