@@ -59,7 +59,9 @@ uses 20 episodes.
 - Banana picking improves from 60% to 90% success: **+30 percentage points**,
   or **50% relative improvement**.
 - Pot resetting improves from 0% to **55%**.
-- Average success across the three tasks improves from **40% to 75%**.
+- The average absolute improvement across the three tasks is **35 percentage
+  points**.
+- The maximum absolute improvement is **55 percentage points** on pot reset.
 
 ## Links
 

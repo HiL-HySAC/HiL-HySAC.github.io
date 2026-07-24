@@ -132,8 +132,8 @@
       </section>
 
       <section class="stats" aria-label="Project highlights">
-        <div><strong>75%</strong><span>average success rate</span></div>
-        <div><strong>40→75%</strong><span>average baseline to ours</span></div>
+        <div><strong>+35 pp</strong><span>average absolute improvement</span></div>
+        <div><strong>+55 pp</strong><span>maximum absolute improvement</span></div>
         <div><strong>≈10×</strong><span>larger randomization zones</span></div>
       </section>
 
@@ -258,12 +258,12 @@
                 role="img"
                 aria-label="HIL-SERL and our success rates: tennis ball 60 versus 80 percent; banana 60 versus 90 percent; pot reset 0 versus 55 percent"
               >
-                <i class="baseline" style="--height: 60%"></i>
-                <i class="ours" style="--height: 80%"></i>
-                <i class="baseline" style="--height: 60%"></i>
-                <i class="ours" style="--height: 90%"></i>
-                <i class="baseline" style="--height: 0%"></i>
-                <i class="ours" style="--height: 55%"></i>
+                <i class="baseline" style="--height: 60%" data-value="60%"></i>
+                <i class="ours" style="--height: 80%" data-value="80%"></i>
+                <i class="baseline" style="--height: 60%" data-value="60%"></i>
+                <i class="ours" style="--height: 90%" data-value="90%"></i>
+                <i class="baseline" style="--height: 0%" data-value="0%"></i>
+                <i class="ours" style="--height: 55%" data-value="55%"></i>
               </div>
               <div class="chart-labels" aria-hidden="true">
                 <span>Tennis ball</span>
@@ -274,18 +274,20 @@
             </figure>
             <div>
               <p class="eyebrow">Evaluation success</p>
-              <h3>Average success rises from 40% to 75%.</h3>
+              <h3>35 pp average improvement.<br />Up to 55 pp on a single task.</h3>
               <p>
                 Tennis-ball success improves from 60% to 80%, banana success
                 from 60% to 90%, and pot reset from 0% to 55%. Each result is
                 measured over 20 evaluation episodes after real-world training.
+                We report absolute per-task improvements because task
+                difficulties differ.
               </p>
             </div>
           </div>
 
           <div class="metrics">
-            <div><strong>+35 pp</strong><span>average absolute gain</span></div>
-            <div><strong>20 demos</strong><span>initial demonstrations per task</span></div>
+            <div><strong>+35 pp</strong><span>average absolute improvement</span></div>
+            <div><strong>+55 pp</strong><span>maximum absolute improvement</span></div>
             <div><strong>3 tasks</strong><span>across two robot arms</span></div>
           </div>
         </div>

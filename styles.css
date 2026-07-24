@@ -580,10 +580,22 @@ h1 span {
 }
 
 .result-chart i {
+  position: relative;
   width: 11%;
   height: var(--height);
   display: block;
   background: var(--blue);
+}
+
+.result-chart i::after {
+  content: attr(data-value);
+  position: absolute;
+  bottom: calc(100% + 0.3rem);
+  left: 50%;
+  color: var(--ink);
+  font: 700 0.72rem "Source Sans 3", Arial, sans-serif;
+  line-height: 1;
+  transform: translateX(-50%);
 }
 
 .result-chart i.baseline {
