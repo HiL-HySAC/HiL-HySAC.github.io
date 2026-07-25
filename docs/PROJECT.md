@@ -7,27 +7,7 @@ Hybrid Actions and Reward-Decomposed Critics**
 
 ## Authors
 
-1. Changhao Li — HHCM, Istituto Italiano di Tecnologia; DIBRIS, University of
-   Genova — [ORCID](https://orcid.org/0009-0006-1754-0283)
-2. Yifang Zhang — HHCM, Istituto Italiano di Tecnologia; DIBRIS, University of
-   Genova — [ORCID](https://orcid.org/0000-0002-7639-4232)
-3. Heng Zhang — Human-Robot Interfaces and Interaction Lab, Istituto Italiano
-   di Tecnologia; DRIM and University of Genova —
-   [ORCID](https://orcid.org/0000-0003-4832-9668)
-4. Davide Torielli — HHCM, Istituto Italiano di Tecnologia; DIBRIS, University
-   of Genova — [ORCID](https://orcid.org/0000-0002-7639-4232)
-5. Damiano Gasperini — HHCM, Istituto Italiano di Tecnologia; DIBRIS,
-   University of Genova —
-   [ORCID](https://orcid.org/0000-0002-7639-4232)
-6. Luca Muratore — DIBRIS, University of Genova —
-   [ORCID](https://orcid.org/0000-0002-1265-3370)
-7. Arash Ajoudani — Human-Robot Interfaces and Interaction Lab, Istituto
-   Italiano di Tecnologia —
-   [ORCID](https://orcid.org/0000-0002-1261-737X)
-8. Nikos Tsagarakis — DIBRIS, University of Genova —
-   [ORCID](https://orcid.org/0000-0002-9877-8237)
-
-Contact: `changhao.li@papercept.net`
+Anonymous Authors
 
 ## Method summary
 
