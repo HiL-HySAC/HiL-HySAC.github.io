@@ -14,8 +14,8 @@ critic coordinates training.
 
 - An overview of the HiL-HySAC method and training framework.
 - Results for tennis-ball picking, banana picking, and pot resetting.
-- Baseline and HiL-HySAC evaluation videos.
-- Training-rollout videos for the banana and pot tasks.
+- Baseline and HiL-HySAC evaluation videos, including Unitree G1 simulation.
+- Training-rollout videos for the Unitree G1, banana, and pot tasks.
 - A publication-ready resources section for the paper and BibTeX.
 
 Detailed project metadata and reported results are maintained in
