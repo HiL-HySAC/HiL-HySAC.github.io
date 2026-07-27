@@ -1,45 +1,36 @@
-# HiL-HySAC: efficient real-world online reinforcement learning
+# HiL-HySAC project website
 
-This repository contains the static project page published at
-<https://hil-hysac.github.io/>.
+Static project website for **Efficient Real-World Online Reinforcement Learning
+for Robot Manipulation via Hybrid Actions and Reward-Decomposed Critics**.
 
-The site intentionally has no build step or framework. It is plain HTML, CSS,
-and JavaScript, so GitHub Pages can serve it directly and contributors can
-preview it with any local web server.
+**Live site:** <https://hil-hysac.github.io/>
 
-## Preview locally
+HiL-HySAC combines human-in-the-loop online reinforcement learning with hybrid
+continuous–discrete actions. Separate actors control the robot arm's 6-DoF
+Cartesian motion and the gripper state, while a centralized, reward-decomposed
+critic coordinates training.
 
-From the repository root:
+## What is included
+
+- An overview of the HiL-HySAC method and training framework.
+- Results for tennis-ball picking, banana picking, and pot resetting.
+- Baseline and HiL-HySAC evaluation videos.
+- Training-rollout videos for the banana and pot tasks.
+- A publication-ready resources section for the paper and BibTeX.
+
+Detailed project metadata and reported results are maintained in
+[docs/PROJECT.md](docs/PROJECT.md).
+
+## Run locally
+
+The site uses plain HTML, CSS, and JavaScript, with no build step or package
+installation required. From the repository root, run:
 
 ```bash
 python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000>.
-
-## Project
-
-This page presents a real-world online reinforcement learning framework for
-robot manipulation with hybrid action spaces. The method uses centralized
-training with decentralized execution (CTDE): separate actor-agents control the
-continuous Cartesian arm pose and discrete gripper actions, while a centralized
-multi-head critic coordinates training through reward decomposition.
-
-The project metadata and reported results are recorded in
-[docs/PROJECT.md](docs/PROJECT.md).
-
-Most text is in `index.html`. Visual styling is in `styles.css`, and the small
-copy-to-clipboard interaction is in `script.js`.
-
-## Publish with GitHub Pages
-
-1. Open **Settings → Pages** in this GitHub repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select the `main` branch and the `/ (root)` folder.
-4. Save and wait for the Pages deployment to finish.
-
-The expected URL is
-<https://hil-hysac.github.io/>.
 
 ## Repository layout
 
@@ -51,8 +42,8 @@ The expected URL is
 │   │   ├── training_framework.pdf
 │   │   └── training_framework.png
 │   └── videos/
-│       ├── *.mp4
-│       └── *.jpg
+│       ├── *.jpg
+│       └── *.mp4
 ├── docs/
 │   └── PROJECT.md
 ├── .nojekyll
@@ -61,18 +52,40 @@ The expected URL is
 └── styles.css
 ```
 
-## Before release
+The main page content and video references are in `index.html`. Site-wide
+styling lives in `styles.css`, and `script.js` implements the
+copy-to-clipboard interaction. Poster images and MP4 files share the same base
+filename under `assets/videos/`.
 
-- Add the official paper URL and BibTeX once available.
-- Replace the CSS-rendered result summary with the final publication figure.
-- Test the page at desktop and mobile widths.
-- Confirm every external link and the citation.
-- Add a social preview image at `assets/social-card.png`, then add
-  `<meta property="og:image" content="https://hil-hysac.github.io/assets/social-card.png">`
-  to the page `<head>`.
-- Add the project’s chosen license. No license is assumed by this scaffold.
+## Update the site
+
+1. Update project facts and results in `docs/PROJECT.md`.
+2. Keep the corresponding page copy in `index.html` in sync.
+3. Add or replace media under `assets/figs/` and `assets/videos/`.
+4. Preview the site locally and check desktop and mobile layouts.
+5. Verify that videos load, external links resolve, and interactive controls
+   work with a keyboard.
+
+## Deployment
+
+GitHub Pages serves the repository directly from the root of the `main` branch.
+No generated files are required.
+
+To configure a new fork, open **Settings → Pages**, choose **Deploy from a
+branch**, and select `main` and `/ (root)`.
+
+## Release checklist
+
+- Add the official paper or preprint URL, venue, year, and BibTeX.
+- Add code, model, and dataset links if those artifacts will be released.
+- Replace draft method or results visuals with final publication figures.
+- Confirm image alternative text, keyboard navigation, and reduced-motion
+  behavior.
+- Add a 1200 × 630 social preview at `assets/social-card.png` and reference it
+  with an `og:image` tag in the page `<head>`.
+- Add the project's chosen license.
 
 ## License
 
-No license has been selected yet. Add a `LICENSE` file before accepting external
-contributions or reusing the site outside this repository.
+No license has been selected. Until a `LICENSE` file is added, no permission is
+granted to reuse or redistribute this repository's contents.
